@@ -46,8 +46,10 @@ export default class App extends React.Component {
 
   render() {
     return (
+     
       <View style={styles.container}>
-        <KeyboardAvoidingView>
+        
+         <KeyboardAvoidingView enabled behavior="padding">
           <View>
             <Text>Name:</Text>
             <TextInput
@@ -100,6 +102,7 @@ export default class App extends React.Component {
               value={this.state.password}
               style={styles.textInput}
               onChangeText={this.handleOnChangePassword}
+              secureTextEntry={true}
             />
           </View>
           <View style={styles.touch}>
@@ -112,8 +115,9 @@ export default class App extends React.Component {
               <Text style={{ textAlign: "center" }}>Sign In</Text>
             </TouchableOpacity>
           </View>
-        </KeyboardAvoidingView>
+          </KeyboardAvoidingView>
       </View>
+     
     );
   }
 }
@@ -123,18 +127,19 @@ const styles = StyleSheet.create({
     flex: 1,
     backgroundColor: "#fff",
 
-    justifyContent: "flex-start",
+    justifyContent: "center",
     flexDirection: "column",
-    marginLeft: 80,
-
-    marginTop: 20
+   
+    alignItems:"center",
+   
   },
   textInput: {
     width: 200,
     height: 40,
     borderWidth: 1,
     backgroundColor: "pink",
-    borderRadius: 3
+    borderRadius: 3,
+   paddingLeft:10
   },
   btn: {
     borderWidth: 1,
